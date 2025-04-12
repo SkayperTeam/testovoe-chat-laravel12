@@ -15,24 +15,28 @@
 ### 1. Клонировать репозиторий
 
 ```bash
-git clone https://github.com/your-username/chat-api.git
-cd chat-api
+git clone git@github.com:SkayperTeam/testovoe-chat-laravel12.git
+cd testovoe-chat-laravel12
 ```
 ### 2. Скопировать .env
 ```bash
 cp .env.example .env
 ```
-### 3. Поднять контейнеры
+### 3. Установить зависимости
 ```bash
-docker-compose up -d
-```
-### 4. Установить зависимости и запустить миграции + сидеры
-```bash
-docker-compose exec laravel.test composer install
 docker-compose exec laravel.test php artisan key:generate
 docker-compose exec laravel.test php artisan migrate --seed
 ```
-### 5. Перейти по ссылке
+### 4. Поднять контейнеры
+```bash
+docker-compose up --buld -d
+```
+### 5. Установить зависимости и запустить миграции + сидеры
+```bash
+docker-compose exec laravel.test php artisan key:generate
+docker-compose exec laravel.test php artisan migrate --seed
+```
+### 6. Перейти по ссылке
 ```bash
 http://localhost:8080
 ```
