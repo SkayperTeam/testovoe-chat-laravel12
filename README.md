@@ -24,12 +24,11 @@ cp .env.example .env
 ```
 ### 3. Установить зависимости
 ```bash
-docker-compose exec laravel.test php artisan key:generate
-docker-compose exec laravel.test php artisan migrate --seed
+composer i
 ```
 ### 4. Поднять контейнеры
 ```bash
-docker-compose up --buld -d
+docker-compose up --build -d
 ```
 ### 5. Установить зависимости и запустить миграции + сидеры
 ```bash
