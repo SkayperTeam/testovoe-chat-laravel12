@@ -30,9 +30,12 @@ composer i
 ```bash
 docker-compose up --build -d
 ```
-### 5. Установить зависимости и запустить миграции + сидеры
+### 5. Сгенерировать ключ приложения
 ```bash
-docker-compose exec laravel.test php artisan key:generate
+docker-compose exec laravel.test php artisan migrate --seed
+```
+### 6. Запустить миграции и сидеры
+```bash
 docker-compose exec laravel.test php artisan migrate --seed
 ```
 ### 6. Перейти по ссылке
