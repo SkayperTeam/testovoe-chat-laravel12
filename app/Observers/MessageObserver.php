@@ -28,7 +28,7 @@ class MessageObserver
     /**
      * Handle the Message "deleted" event.
      */
-    public function deleted(Message $message)
+    public function deleted(Message $message): void
     {
         $chat = $message->chat;
 
