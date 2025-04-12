@@ -3,16 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chat;
-use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class MessageController extends Controller
 {
-    public function index(Chat $chat)
+    public function index(Chat $chat): LengthAwarePaginator
     {
-        $messages = $chat->messages()
+        return $chat->messages()
             ->orderByDesc('created_at')
-            ->paginate(50); // или другой лимит
-
-        return response()->json($messages);
+            ->paginate(50);
     }
 }

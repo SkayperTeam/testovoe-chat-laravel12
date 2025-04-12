@@ -11,7 +11,7 @@ class ChatSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run()
+    public function run(): void
     {
         Chat::factory()
             ->count(100)
