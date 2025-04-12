@@ -28,7 +28,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('chats', function (Blueprint $table) {
-            //
+            $table->dropForeign(['last_message_id']);
+            $table->dropIndex(['last_message_id']);
+            $table->dropColumn('last_message_id');
         });
     }
 };
